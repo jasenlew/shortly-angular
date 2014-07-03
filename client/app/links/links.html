@@ -8,7 +8,7 @@
       <td>Shortly Link</td>
       <td>Visits</td>
     </thead>
-    <tr ng-repeat='link in data.links' ng-model='link'>
+    <tr ng-repeat="link in data.links | orderBy:'-visits'" ng-model='link'>
       <td> <img src='../assets/redirect_icon.png'> </td>
       <td> {{ link.title }} </td>
       <td> {{ link.url }} </td>
