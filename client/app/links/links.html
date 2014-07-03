@@ -1,4 +1,20 @@
 <div id='container' ng-controller='LinksController'>
   <!-- Your html here -->
+  <table>
+    <thead>
+      <td></td>
+      <td>Title</td>
+      <td>Url</td>
+      <td>Shortly Link</td>
+      <td>Visits</td>
+    </thead>
+    <tr ng-repeat='link in data.links' ng-model='link'>
+      <td> <img src='../assets/redirect_icon.png'> </td>
+      <td> {{ link.title }} </td>
+      <td> {{ link.url }} </td>
+      <td> <a href="{{ link.base_url + '/api/links/' + link.code}}"> {{ link.base_url + '/' + link.code}} </td>
+      <td> {{ link.visits}} </td>
+    </tr>
+  </table>
   <a href="#/shorten">Shorten Page</a>
 </div>
